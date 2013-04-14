@@ -42,11 +42,10 @@ class Application_Form_RegisterUser extends Zend_Form
           'label' => "Введите символы, указанные ниже",
           'captcha' => array(
               'captcha' => 'Figlet',
-              'wordLen' => 6,
+              'wordLen' => 4,
               'timeout' => 300,
           ),
       ));
-
 
       $submit = new Zend_Form_Element_Submit('submit');
       $submit->setLabel('Зарегистрироваться');
