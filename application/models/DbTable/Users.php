@@ -19,9 +19,14 @@ class Application_Model_DbTable_Users extends Zend_Db_Table_Abstract {
   public function getUser($id) {
     $id = (int)$id;
     $row = $this->fetchRow('id=' . $id);
-    if (!row) {
+    if (!$row) {
       throw new Exception('Could not find row ' . $id);
     }
     return $row->toArray();
+  }
+
+  public function emailExists($email) {
+    $row = $this->fetchRow("email='".$email."'");
+    return $row ? true : false;
   }
 }

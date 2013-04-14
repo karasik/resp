@@ -10,8 +10,8 @@ class Application_Form_RegisterUser extends Zend_Form
         ->setRequired(true)
         ->addFilter('StripTags')
         ->addFilter('StringTrim')
-        ->addValidator('EmailAddress');
-        
+        ->addValidator('EmailAddress')
+        ->addValidator(new Custom_Validate_UserEmailNotExists());
 
       $password = new Zend_Form_Element_Password('password');
       $password->setLabel('Введите пароль')
