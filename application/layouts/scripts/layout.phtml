@@ -1,7 +1,7 @@
 <?php
 $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
 $this->headTitle()->setSeparator(' - ');
-$this->headTitle('Stupid responder');
+$this->headTitle('Lightweight responder');
 echo $this->doctype(); 
 echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/main.css'); 
 ?>
@@ -16,7 +16,7 @@ echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/main.css');
         Привет! Вы можете
           <a href=<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>>попасть на главную</a>
           или
-          <a href=<?php echo $this->url(array('controller' => 'index', 'action' => 'register')); ?>>зарегистрироваться</a>
+          <a href=<?php echo $this->url(array('controller' => 'register', 'action' => 'register')); ?>>зарегистрироваться</a>
       </div>
        <h1><?php echo $this->escape($this->title); ?></h1>
        <?php echo $this->layout()->content; ?>

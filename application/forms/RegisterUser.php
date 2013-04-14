@@ -28,14 +28,16 @@ class Application_Form_RegisterUser extends Zend_Form
         ->setRequired(true)
         ->addFilter('StripTags')
         ->addFilter('StringTrim')
-        ->addValidator('NotEmpty');
+        // ->addValidator('NotEmpty')
+        ->addValidator('Alpha');
 
       $last_name = new Zend_Form_Element_Text('last_name');
       $last_name->setLabel('Фамилия')
         ->setRequired(true)
         ->addFilter('StripTags')
         ->addFilter('StringTrim')
-        ->addValidator('NotEmpty');
+        // ->addValidator('NotEmpty')
+        ->addValidator('Alpha');
 
       // Using single captcha key:
       $captcha = new Zend_Form_Element_Captcha('captcha', array(
